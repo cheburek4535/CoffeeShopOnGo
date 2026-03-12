@@ -14,6 +14,9 @@ func NewDefaultCrud[T any, ID comparable](db *gorm.DB) *DefaultCrud[T, ID] {
 	return &DefaultCrud[T, ID]{db: db}
 }
 
+
+
+
 func (r *DefaultCrud[T, ID]) Create(entity *T) (*T, error) {
 	if err := r.db.Create(&entity).Error; err != nil {
 		return nil, err

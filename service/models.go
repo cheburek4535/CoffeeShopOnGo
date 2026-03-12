@@ -14,6 +14,7 @@ type Product struct {
     Price float64
     Category string
     VAT int
+    IsActive bool
     
     Sales []Sale
 }
@@ -36,8 +37,8 @@ type Sale struct {
    StaffId int
    Quantity int
 
-   Product Product
-   Staff Staff
+   Product *Product
+   Staff *Staff
 }
 
 type Warehouse struct {
@@ -46,7 +47,7 @@ type Warehouse struct {
     Stock int
     Status string
 
-    Product Product
+    Product *Product
 }
 
 // var DB = *&gorm.DB{}
