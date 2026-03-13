@@ -673,10 +673,10 @@ func main() {
 	}
 
 	svc := service.NewService(repo)
-	// reportSvc := service.NewReportService(svc)
+	reportSvc := service.NewReportService(svc)
 
-	// app := NewApp(svc, reportSvc)
-	// app.run()
+	app := NewApp(svc, reportSvc)
+	app.run()
 
 	router := api.SetupRouter(svc)
 

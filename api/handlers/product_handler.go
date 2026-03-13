@@ -98,7 +98,10 @@ func (h *ProductHandler) Create(c *gin.Context) {
 	c.JSON(http.StatusCreated, response)
 }
 
-// PATCH /api/products/:id/price
+// @Success      200  {object}  models.ProductResponse
+// @Failure      400  {object}  models.ErrorResponse
+// @Failure      402 {object}  models.ErrorResponse
+// @Router       /api/products/ [post]
 func (h *ProductHandler) UpdatePrice(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
